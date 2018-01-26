@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>CACHE MODULE</name>
+	<code>cache_module</code>
+	<version>1.0</version>
+	<author>Ankur Singh</author>
+	<link>https://github.com/ankursinghagra/opencart-cache-module</link>
+	<!-- Add side menu -->
+	<file path="admin/controller/common/column_left.php">
+		<operation error="log">
+			<search><![CDATA[if ($maintenance) {]]></search>
+			<add position="before"><![CDATA[
+			if ($this->user->hasPermission('access', 'tool/cache')) {
+				$maintenance[] = array(
+					'name'	   => $this->language->get('text_cache'),
+					'href'     => $this->url->link('tool/cache', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+			]]></add>
+		</operation>
+	</file>
+</modification>
+
