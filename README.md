@@ -1,7 +1,5 @@
 # opencart-cache-ocmod
 
-UNDER CONSTRUCTION
-
 ## Installation
 
 For v2+
