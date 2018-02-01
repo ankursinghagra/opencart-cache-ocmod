@@ -1,7 +1,5 @@
 <?php
-
-class ModelToolCache extends Model {
-
+class ModelExtensionModuleCache extends Model {
 	function deleteAll($str) {
 	    //It it's a file.
 	    if (is_file($str)) {
@@ -21,6 +19,4 @@ class ModelToolCache extends Model {
 	        return @rmdir($str);
 	    }
 	}
-	
 }
-
